@@ -1,15 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const KNOWN_COUNTRIES = ['en-GB', 'fr-FR'];
+const countriesLookup: Record<string, string> = {
+    'US': 'en-GB',
+    'JP': 'fr-FR',
+};
 
 export default function middleware(req: NextRequest) {
     const country = req.geo?.country ?? '';
     console.log(`Country -> '${country}'`);
-    if(country && KNOWN_COUNTRIES.some((knownCountry) => knownCountry === country)) {
-        if(req.nextUrl.pathname === `/${country}`) {
+    if(country && Object.keys(countriesLookup).some((knownCountry) => knownCountry === country)) {
+        const path = `/${countriesLookup[country]}`;
+        if(req.nextUrl.pathname === path) {
             return NextResponse.next();
         }
-        return NextResponse.redirect(`/${country}`)
+        return NextResponse.redirect(path);
     }
     return NextResponse.next();
 }

@@ -6,15 +6,17 @@ const countriesLookup: Record<string, string> = {
 };
 
 export default function middleware(req: NextRequest) {
-    const origin = req.nextUrl;
+    const origin = req.nextUrl.origin;
     const country = req.geo?.country ?? '';
-    console.log(`Country -> '${country}'`);
     if(country && Object.keys(countriesLookup).some((knownCountry) => knownCountry === country)) {
         const path = `${origin}/${countriesLookup[country]}`;
-        if(req.nextUrl.pathname === path) {
+        if(req.nextUrl.pathname === `/${countriesLookup[country]}`) {
             return NextResponse.next();
         }
         return NextResponse.redirect(path);
     }
-    return NextResponse.next();
 }
+
+export const config = {
+    matcher: "/",
+};

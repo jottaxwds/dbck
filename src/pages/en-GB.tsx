@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css'
+import useSaveCountryPreference from '../hooks/useSaveCountryPreference';
 
-export default function enGB () {
+export default function GB () {
+    useSaveCountryPreference('en-GB');
     return(<>
         <Head>
           <title>Deblock in en-GB</title>

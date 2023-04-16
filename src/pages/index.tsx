@@ -4,10 +4,14 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import styled from 'styled-components'
+import React from 'react';
+import { countriesLookup } from '../constants'
+import useCountry from '../hooks/useCountry'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  useCountry();
   return (
     <>
       <Head>

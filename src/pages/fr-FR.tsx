@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css'
+import React from 'react';
+import useSaveCountryPreference from '../hooks/useSaveCountryPreference';
 
 
-export default function frFR () {
+export default function FR () {
+    useSaveCountryPreference('fr-FR');
     return(<>
         <Head>
           <title>Deblock au fr-FR</title>

@@ -1,4 +1,4 @@
 export const countriesLookup: Record<string, string> = {
-    'US': 'en-GB',
-    'JP': 'fr-FR',
+    'GB': 'en-GB',
+    'FR': 'fr-FR',
 };

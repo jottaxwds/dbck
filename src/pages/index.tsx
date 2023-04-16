@@ -7,7 +7,6 @@ import useCountry from '../hooks/useCountry'
 
 export default function Home() {
   const { isLoading = true } = useCountry();
-  console.log('Is Loading -> ', isLoading);
   return React.useMemo(() => (
     <>
       <Head>

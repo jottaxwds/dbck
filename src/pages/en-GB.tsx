@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css'
 import useSaveCountryPreference from '../hooks/useSaveCountryPreference';
+import Link from 'next/link';
 
 export default function GB () {
     useSaveCountryPreference('en-GB');
@@ -13,6 +14,7 @@ export default function GB () {
         </Head>
         <main className={styles.main}>
             English web 🇬🇧! Welcome!!
+            <Link href="/scrollAnimation"><button>Go to Exercise 2 (Animation + Scroll)</button></Link>
         </main>
     </>)
 }

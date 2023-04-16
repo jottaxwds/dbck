@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css'
 import React from 'react';
 import useSaveCountryPreference from '../hooks/useSaveCountryPreference';
+import Link from 'next/link';
 
 
 export default function FR () {
@@ -15,6 +16,7 @@ export default function FR () {
         </Head>
         <main className={styles.main}>
             Françoise web 🇫🇷! Tres bien!
+            <Link href="/scrollAnimation"><button>Go to Exercise 2 (Animation + Scroll)</button></Link>
         </main>
     </>)
 }

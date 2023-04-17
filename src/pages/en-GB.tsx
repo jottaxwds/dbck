@@ -12,9 +12,11 @@ export default function GB () {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <nav>
+            <Link href="/scrollAnimation"><button>Go to Exercise 2 (Animation + Scroll)</button></Link>
+        </nav>
         <main className={styles.main}>
             English web 🇬🇧! Welcome!!
-            <Link href="/scrollAnimation"><button>Go to Exercise 2 (Animation + Scroll)</button></Link>
         </main>
     </>)
 }

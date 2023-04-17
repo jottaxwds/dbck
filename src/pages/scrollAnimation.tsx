@@ -1,25 +1,8 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css'
-import useSaveCountryPreference from '../hooks/useSaveCountryPreference';
-import styled from 'styled-components';
 import AnimatedComponent from '../components/AnimatedComponent';
 import Link from 'next/link';
-
-const Title = styled.h2`
-    margin-bottom: 2rem;
-`;
-const Text = styled.p`
-    margin: 2rem 0;
-`;
-
-const PageNavigation = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    color: blue;
-    margin-bottom: 3rem;
-`;
+import { Nav, PageNavigation, Title, Text } from '../styles/styles';
 
 export default function GB () {
     return(<>
@@ -29,9 +12,9 @@ export default function GB () {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <nav>
-            <Link href="/"><button>Go back home...</button></Link>
-        </nav>
+        <Nav>
+            <Link href="/">Go back home...</Link>
+        </Nav>
         <main className={styles.main}>
             <PageNavigation><a href="#lastSection">Jump to last content</a></PageNavigation>
             <AnimatedComponent>
